@@ -1,0 +1,27 @@
+<main class="mt-4">
+  <p class="text-center"><%= flash[:notice] %></p>
+  <div class="container mt-2">
+    <div class="row">
+      <div class="mx-auto col-9 col-sm-8 col-lg-7 col-xl-5">
+        <h1 class="text-center">Welcome to
+          <strong><i class="fas fa-book"></i> Bookers!!</strong>
+        </h1>
+        <div class="col-10 mx-auto">
+          <p>in
+            <strong><i class="fas fa-book"></i> Bookers,</strong></p>
+          <p>you can share and exchange your options, inpressions, and emotions</p>
+          <p>about various books!</p>
+        </div>
+        <div class="btn-wrapper col-10 mx-auto">
+          <div class="row mb-3">
+            <%= link_to 'Log in', new_user_session_path, class:"btn btn-sm btn-info btn-block sign_in" %>
+          </div>
+          <div class="row mb-3">
+            <%= link_to 'Sign up', new_user_registration_path, class:"btn btn-sm btn-success btn-block sign_up" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

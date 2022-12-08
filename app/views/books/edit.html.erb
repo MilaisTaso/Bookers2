@@ -1,0 +1,11 @@
+<% @title = "Editing Book" %>
+<main class="container">
+  <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
+    <%= render 'shared/form', post:@post, form_text: 'Update Book' %>
+    <div>
+      <%= link_to 'Show',book_path(@post.id) %>
+      <span>|</span>
+      <%= link_to 'Back', books_path %>
+    </div>
+  </div>
+</main>
