@@ -373,7 +373,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(page).to have_field 'user[name]', with: user.name
       end
       it '画像編集フォームが表示される' do
-        expect(page).to have_field 'user[profile_image]'
+        expect(page).to have_field 'user[user_image]'
       end
       it '自己紹介編集フォームに自分の自己紹介文が表示される' do
         expect(page).to have_field 'user[introduction]', with: user.introduction
@@ -389,7 +389,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
         @user_old_intrpduction = user.introduction
         fill_in 'user[name]', with: Faker::Lorem.characters(number: 9)
         fill_in 'user[introduction]', with: Faker::Lorem.characters(number: 19)
-        expect(user.profile_image).to be_attached
+        expect(user.user_image).to be_attached
         click_button 'Update User'
         save_page
       end

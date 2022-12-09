@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    about_path
+    root_path
   end
 
   protected
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   def seve_clear
     if @post.save
       flash[:notice] = "You have created book successfully"
-      redirect_to user_path(@post.user_id)
+      redirect_to book_path(@post.id)
     else
       @user = User.find(current_user.id)
       @books = Book.all
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   def update_clear
     if @post.update(book_params)
       flash[:notice] = "You have updated user successfully."
-      redirect_to book_path(@post.user_id)
+      redirect_to book_path(@post.id)
     else
       render :edit
     end

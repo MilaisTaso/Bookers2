@@ -1,18 +1,29 @@
-<div class="col-md-8 offset-md-1">
+<main class=" px-5 mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'shared/profile', user:@user %>
+        <%= render 'shared/form', post:@post,form_text:'Create Book' %>
+      </div>
+      <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
         <table class="table mb-0">
           <tbody>
             <tr>
-              <%= render 'shared/table', book:@book %>
+              <td>
+                <%= link_to user_path(@book.user_id)  do %>
+                  <%= image_tag @book.user.get_user_image(100,100) %>
+                  <p class="mb-0 w-100"><%= @book.user.name%></p>
+                <% end %>
+              </td>
+              <td><%= link_to @book.title, book_path(@book.id) %></td>
+              <td><%= @book.body%></td>
+  
               <%= render 'shared/under', book:@book %>
             </tr>
           </tbody>
         </table>
-        <span class="ml-4 pl-1 d-inline-block">
-            <%= link_to "#{@book.user.name}",user_path(@book.id) %>
-        </span>
       </div>
     </div>
   </div>
 </main>
-

@@ -1,5 +1,5 @@
-<main>
-  <div class="cntainer px-5 mt-4">
+<main class="px-5 mt-4">
+  <div class="container">
     <div class="row">
       <div class="col-md-3">
         <%= render 'shared/profile', user:@user %>
@@ -9,7 +9,10 @@
         <%= render 'shared/head' %>
           <% @users.each do |user| %>
             <tr>
-              <td><%= image_tag user.get_user_image(100,100) %></td>
+              <td><%= link_to user_path(user.id) do%>
+                <%= image_tag user.get_user_image(100,100) %>
+                <% end %>
+              </td>
               <td><%= user.name%></td>
               <td><%= link_to 'Show',user_path(user.id) %></td>
             </tr>

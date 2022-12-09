@@ -1,6 +1,6 @@
 
 <% if post.errors.any? %>
-  <h3><%= post.errors.count %>件のエラー</h3>
+  <h4>error</h4>
   <ul>
     <% post.errors.full_messages.each do |message|%>
       <li><%= message %></li>
